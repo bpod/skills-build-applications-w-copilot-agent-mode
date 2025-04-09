@@ -26,12 +26,7 @@ SECRET_KEY = "django-insecure-d8_hoij9dl5+jubd)w*(p58fp88^5eqs@+c0dd2&o6tyxvvg51
 DEBUG = True
 
 # Allow all hosts
-ALLOWED_HOSTS = [
-    'localhost',
-    '127.0.0.1',
-    'upgraded-zebra-qvrx9p6v57gcxxvx-8000.app.github.dev',
-    '.app.github.dev'  # Allows all subdomains of app.github.dev
-]
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'upgraded-zebra-qvrx9p6v57gcxxvx-8000.app.github.dev']
 
 
 # Application definition

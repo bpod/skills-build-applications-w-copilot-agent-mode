@@ -6,10 +6,7 @@ from .models import User, Team, Activity, Leaderboard, Workout
 
 @api_view(['GET'])
 def api_root(request, format=None):
-    base_url = request.build_absolute_uri('/').rstrip('/')
-    # Handle GitHub Codespace URL pattern
-    if '.preview.app.github.dev' in request.get_host():
-        base_url = f'https://{request.get_host()}'
+    base_url = 'https://upgraded-zebra-qvrx9p6v57gcxxvx-8000.app.github.dev'
     return Response({
         'users': f'{base_url}/api/users/',
         'teams': f'{base_url}/api/teams/',
