@@ -26,7 +26,12 @@ SECRET_KEY = "django-insecure-d8_hoij9dl5+jubd)w*(p58fp88^5eqs@+c0dd2&o6tyxvvg51
 DEBUG = True
 
 # Allow all hosts
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'upgraded-zebra-qvrx9p6v57gcxxvx-8000.app.github.dev',
+    '.app.github.dev'  # Allows all subdomains of app.github.dev
+]
 
 
 # Application definition
@@ -76,35 +81,11 @@ WSGI_APPLICATION = "octofit_tracker.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-# Database configuration for MongoDB using Djongo
+# Database configuration for development using SQLite
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'octofit_db',
-        'ENFORCE_SCHEMA': True,
-        'CLIENT': {
-            'host': 'localhost',
-            'port': 27017,
-            'username': '',
-            'password': '',
-            'authSource': 'admin',
-            'authMechanism': 'SCRAM-SHA-1'
-        },
-        'LOGGING': {
-            'version': 1,
-            'disable_existing_loggers': False,
-            'handlers': {
-                'console': {
-                    'class': 'logging.StreamHandler',
-                },
-            },
-            'loggers': {
-                'djongo': {
-                    'level': 'DEBUG',
-                    'handlers': ['console'],
-                },
-            },
-        },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
